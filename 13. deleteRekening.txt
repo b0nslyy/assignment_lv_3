@@ -1,0 +1,10 @@
+create procedure updateRekening(
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	delete from rekening where id = id_par;
+commit;
+	
+end; $$

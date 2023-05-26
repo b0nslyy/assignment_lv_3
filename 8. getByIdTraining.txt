@@ -1,0 +1,12 @@
+create procedure getByIdTraining(
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	
+	select * from training where id like id_par;
+
+commit;
+	
+end; $$

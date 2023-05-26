@@ -1,0 +1,21 @@
+create procedure saveKaryawan(
+nama_par varchar, 
+jk_par varchar,
+dob_par date, 
+alamat_par varchar,
+status_par varchar, 
+nik_par varchar, 
+npwp_par varchar,
+id_par varchar)
+language plpgsql
+as $$ 
+begin
+	insert into karyawan(nama, jk, dob, status, alamat)
+	values (nama_par,jk_par, dob_par, alamat_par, status_par, id_par);
+	
+	insert into detail_karyawan(id, nik, npwp)
+	values (id_par, nik_par, npwp_par);
+
+commit;
+	
+end; $$

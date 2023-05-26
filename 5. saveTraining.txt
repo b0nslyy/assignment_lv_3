@@ -1,0 +1,14 @@
+create procedure saveTraining(
+nama_par varchar, 
+tema_par varchar, 
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	insert into training(id, tema, nama_pengajar)
+	values (id_par,tema_par, nama_par);
+
+commit;
+	
+end; $$

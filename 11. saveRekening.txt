@@ -1,0 +1,15 @@
+create procedure saveRekening(
+nama_par varchar, 
+jenis_par varchar, 
+nomor_par varchar, 
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	insert into rekening(nama, jenis, nomor, id)
+	values (id_par,jenis_par, nomor_par, id_par);
+
+commit;
+	
+end; $$

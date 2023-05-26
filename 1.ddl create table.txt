@@ -1,0 +1,19 @@
+CREATE TABLE assignment_schema.karyawan (
+	id varchar NOT NULL,
+	nama varchar NULL,
+	jk varchar NULL,
+	dob date NULL,
+	status varchar NULL,
+	alamat varchar NULL,
+	CONSTRAINT newtable_pk PRIMARY KEY (id)
+);
+
+
+CREATE TABLE assignment_schema.detail_karyawan (
+	id varchar NOT NULL,
+	id_karyawan varchar NULL,
+	nik varchar NULL,
+	npwp varchar NULL,
+	CONSTRAINT detail_karyawan_pk PRIMARY KEY (id),
+	CONSTRAINT detail_karyawan_fk FOREIGN KEY (id_karyawan) REFERENCES assignment_schema.karyawan(id)
+);

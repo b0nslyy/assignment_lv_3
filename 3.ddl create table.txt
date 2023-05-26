@@ -1,0 +1,6 @@
+CREATE TABLE assignment_schema.training (
+	id varchar NOT NULL,
+	tema varchar NULL,
+	nama_pengajar varchar NULL,
+	CONSTRAINT training_pk PRIMARY KEY (id)
+);

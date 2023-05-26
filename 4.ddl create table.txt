@@ -1,0 +1,15 @@
+-- assignment_schema.karyawan_training definition
+
+CREATE TABLE assignment_schema.karyawan_training (
+	id varchar NOT NULL,
+	id_karyawan varchar NULL,
+	id_training varchar NULL,
+	tanggal_training date NULL,
+	CONSTRAINT karyawan_training_pk PRIMARY KEY (id)
+);
+
+
+-- assignment_schema.karyawan_training foreign keys
+
+ALTER TABLE assignment_schema.karyawan_training ADD CONSTRAINT karyawan_training_fk FOREIGN KEY (id_karyawan) REFERENCES assignment_schema.karyawan(id);
+ALTER TABLE assignment_schema.karyawan_training ADD CONSTRAINT karyawan_training_fk_1 FOREIGN KEY (id_training) REFERENCES assignment_schema.training(id);

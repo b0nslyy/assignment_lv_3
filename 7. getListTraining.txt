@@ -1,0 +1,12 @@
+create procedure getListTraining(
+nama_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	
+	select * from training where nama like nama_par;
+
+commit;
+	
+end; $$

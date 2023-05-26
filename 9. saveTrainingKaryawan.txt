@@ -1,0 +1,14 @@
+create procedure saveTrainingKaryawan(
+id_karyawan_par varchar, 
+id_training_par varchar,
+tanggal_training_par date,
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+	insert into karyawan_training(id,id_karyawan,id_training,tanggal_training)
+	values (id_par,id_karyawan_par,id_training_par,tanggal_training_par);
+commit;
+	
+end; $$

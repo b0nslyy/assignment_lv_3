@@ -1,0 +1,13 @@
+CREATE TABLE assignment_schema.rekening (
+	id varchar NOT NULL,
+	id_karyawan varchar NULL,
+	nama varchar NULL,
+	jenis varchar NULL,
+	nomor varchar NULL,
+	CONSTRAINT rekening_pk PRIMARY KEY (id)
+);
+
+
+-- assignment_schema.rekening foreign keys
+
+ALTER TABLE assignment_schema.rekening ADD CONSTRAINT rekening_fk FOREIGN KEY (id_karyawan) REFERENCES assignment_schema.karyawan(id);

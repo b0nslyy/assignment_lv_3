@@ -1,0 +1,9 @@
+create procedure getKaryawan(id_par varchar)
+language plpgsql
+as $$ 
+begin
+    select * from karyawan where id like id_par;
+
+commit;
+	
+end; $$

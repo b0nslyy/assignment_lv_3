@@ -1,0 +1,17 @@
+create procedure updateTraining(
+nama_par varchar, 
+tema_par varchar, 
+id_par varchar
+)
+language plpgsql
+as $$ 
+begin
+
+    UPDATE training
+    SET tema = tema_par,
+        nama_pengajar = nama_par
+    WHERE id = id_par;
+
+commit;
+	
+end; $$

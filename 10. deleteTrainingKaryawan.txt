@@ -1,0 +1,10 @@
+create procedure deleteTrainingKaryawan(
+id_par varchar)
+language plpgsql
+as $$ 
+begin
+	delete from karyawan_training where id = id_par;
+
+commit;
+	
+end; $$
